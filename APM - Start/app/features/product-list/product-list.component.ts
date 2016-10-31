@@ -1,13 +1,17 @@
 import {Component} from '@angular/core';
+import {IProduct} from './product-interface';
 
 @Component({
 	selector: 'pm-products',
 	templateUrl: 'app/features/product-list/product-list.component.html'
 })
-
 export default class ProductListComponent {
 	pageTitle: string = 'Product List';
-	products: any[] = [{
+	imageWidth: number = 50;
+	imageMargin: number = 2;
+	isImageShowing: boolean = false;
+	listFilter: string = 'cart';
+	products: IProduct[] = [{
       "productId": 1,
       "productName": "Leaf Rake",
       "productCode": "GDN-0011",
@@ -15,7 +19,7 @@ export default class ProductListComponent {
       "description": "Leaf rake with 48-inch wooden handle.",
       "price": 19.95,
       "starRating": 3.2,
-      "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+      "imageUrls": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
     },
     {
       "productId": 2,
@@ -27,4 +31,8 @@ export default class ProductListComponent {
       "starRating": 4.2,
       "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
     }];
+
+    toggleImage(): void {
+    	this.isImageShowing = !this.isImageShowing;
+    }
 }
