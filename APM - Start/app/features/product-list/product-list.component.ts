@@ -1,11 +1,13 @@
-import {Component} from '@angular/core';
-import {IProduct} from './product-interface';
+import {Component, OnInit} from '@angular/core';
+import {IProduct} from './product.interface';
 
 @Component({
 	selector: 'pm-products',
-	templateUrl: 'app/features/product-list/product-list.component.html'
+  moduleId: module.id,
+	templateUrl: 'product-list.component.html',
+	styleUrls: ['product-list.component.css']
 })
-export default class ProductListComponent {
+export default class ProductListComponent implements OnInit {
 	pageTitle: string = 'Product List';
 	imageWidth: number = 50;
 	imageMargin: number = 2;
@@ -19,7 +21,7 @@ export default class ProductListComponent {
       "description": "Leaf rake with 48-inch wooden handle.",
       "price": 19.95,
       "starRating": 3.2,
-      "imageUrls": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+      "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
     },
     {
       "productId": 2,
@@ -34,5 +36,9 @@ export default class ProductListComponent {
 
     toggleImage(): void {
     	this.isImageShowing = !this.isImageShowing;
+    }
+
+    ngOnInit(): void {
+    	console.log('initialized');
     }
 }
