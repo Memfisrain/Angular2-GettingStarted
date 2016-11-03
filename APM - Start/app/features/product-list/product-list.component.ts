@@ -41,4 +41,8 @@ export default class ProductListComponent implements OnInit {
     ngOnInit(): void {
     	console.log('initialized');
     }
+
+    onNotify(msg: string): void {
+      this.pageTitle = msg;
+    }
 }
