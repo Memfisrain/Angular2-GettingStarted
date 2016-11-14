@@ -17,6 +17,7 @@ export class ProductService {
 			.map((response: Response) => <IProduct[]> response.json())
 			.do(data => console.log(`All: ${JSON.stringify(data)}`))
 			.catch(this.handleError);
+		}
 
 	private handleError(error: Response) {
 		console.error(error);
