@@ -22,7 +22,8 @@ import {StarRatingComponent} from './shared/components/star-rating/star-rating.c
   		{path: 'welcome', component: WelcomeComponent},
   		{path: '', redirectTo: 'welcome', pathMatch: 'full'},
   		{path: '**', redirectTo: 'welcome', pathMatch: 'full'},
-  	]) ],
+  	]) 
+  ],
   declarations: [ 
   	AppComponent,
   	WelcomeComponent,
